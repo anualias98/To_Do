@@ -1,0 +1,30 @@
+ body{
+background-color:rgb(240, 240, 240);
+}
+h1{
+color:black;
+text-align: center;
+}
+
+
+
+table{
+width: 50%;
+height:50%;
+background-color:rgb(238, 130, 238);
+padding:20px;
+margin:auto;
+text-align: center;
+margin-top:3%;
+color:rgb(2,2,2);
+font-family:'Times New Roman',Times,serif;
+}
+th {
+  height: 70px;
+  }
+td {
+  text-align: center;
+}
+table, th, td {
+  border: 1px solid;
+}

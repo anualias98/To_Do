@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/taskliststyle.css' %}">
+    <title>Task-List</title>
+</head>
+<body>
+{% if request.user.is_authenticated %}
+<p>{{request.user}}</p>
+<a href="">Logout</a>
+{% else %}
+{% endif %}
+<h1>My To Do Lists</h1>
+
+<table>
+    <tr>
+        <th>TASKS</th><th>COMPLETED</th><th>TIME</th><th>DESCRIPTION</th><th>ADD</th><th>UPDATE</th><th>EDIT</th><th>DELETE</th>
+    </tr>
+    {% for tasks in task %}
+    <tr>
+    <td>{{tasks.title}}</td>
+          <td>{{tasks.completed}}</td>
+          <td>{{tasks.created}}</td>
+          <td>{{tasks.description}}</td>
+         <td> <a href="{% url 'task-create' %}">Add Task</a></td>
+         <td> <a href="{% url 'task-detail' tasks.id %}">View</a></td>
+        <td> <a href="{% url 'task-update' tasks.id %}">Edit</a></td>
+          <td> <a href="{% url 'task-delete' tasks.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>

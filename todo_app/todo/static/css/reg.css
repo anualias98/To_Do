@@ -1,0 +1,9 @@
+body{
+  width: 50%;
+  height:50%;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+  text-align: center;
+  align: center;
+}
